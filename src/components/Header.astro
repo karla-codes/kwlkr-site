@@ -1,18 +1,17 @@
 ---
-import { SITE_OWNER, OWNER_DESCRIPTION } from "../config";
+const { name } = Astro.props;
 ---
 
-<header>
-    <div class="header-section">
-        <h1>{SITE_OWNER}</h1>
-        <h2>{OWNER_DESCRIPTION}</h2>
-    </div>
+<header class='wrapper'>
+  <div class='header-section'>
+    <h1>{name}</h1>
+  </div>
 </header>
-<nav>
-    <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Get in Touch</a></li>
-    </ul>
+<nav class='wrapper'>
+  <ul>
+    <li><a href='#projects'>Projects</a></li>
+    <li><a href='#about'>About</a></li>
+    <li><a href='#contact'>Get in Touch</a></li>
+  </ul>
 </nav>
-<div class="divider-thin"></div>
+<div class='divider-thin'></div>

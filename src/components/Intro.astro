@@ -1,13 +1,16 @@
 ---
+import SectionWrapper from "./SectionWrapper.astro";
+
 const { section, title } = Astro.props;
 ---
 
-<section id={section}>
-  <h2>{title}</h2>
-  <div class="content">
-    <p>
-      I'm a designer and front-end developer making delightful experiences for
-      the web. Currently in school working on my Computer Science B.S.
-    </p>
+<SectionWrapper {section} {title}>
+  <p>
+    I'm a front-end developer who loves making delightful experiences for the
+    web.
+  </p>
+  <div>
+    Put cool things here. Like last Spotify song played. Or current read/video
+    game.
   </div>
-</section>
+</SectionWrapper>

@@ -1,26 +1,23 @@
 ---
 import Project from "./Project.astro";
+import SectionWrapper from "./SectionWrapper.astro";
 const { section, title, allProjects } = Astro.props;
 ---
 
-<section id={section}>
-  <h2>{title}</h2>
-  <div class="content">
-    <div class="projects-container">
-      <!-- project cards displayed on home page go here -->
-      <!-- for each project, return a card displaying project name, image, and description -->
+<SectionWrapper {section} {title}>
+  <div class='projects-container'>
+    <!-- for each project, return a card displaying project name, image, and description -->
 
-      <!-- {allProjects.map(({frontmatter: { projectName, shortDescription }}) => <Project {projectName} {shortDescription} />)}   -->
+    <!-- {allProjects.map(({frontmatter: { projectName, shortDescription }}) => <Project {projectName} {shortDescription} />)}   -->
 
-      {
-        allProjects.map((project) => (
-          <Project
-            projectName={project.frontmatter.projectName}
-            shortDescription={project.frontmatter.shortDescription}
-            url={project.url}
-          />
-        ))
-      }
-    </div>
+    {
+      allProjects.map((project) => (
+        <Project
+          projectName={project.frontmatter.projectName}
+          shortDescription={project.frontmatter.shortDescription}
+          url={project.url}
+        />
+      ))
+    }
   </div>
-</section>
+</SectionWrapper>

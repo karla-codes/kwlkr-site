@@ -1,0 +1,22 @@
+---
+import Head from '../components/Head.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_OWNER } from '../config';
+---
+
+<!doctype html>
+<html lang='en'>
+  <Head
+    title={SITE_TITLE}
+    description={SITE_DESCRIPTION}
+  />
+  <body>
+    <Header name={SITE_OWNER} />
+    <slot />
+    <Footer
+      section='footer'
+      owner={SITE_OWNER}
+    />
+  </body>
+</html>

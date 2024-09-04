@@ -1,0 +1,30 @@
+/* Set variables for color theme */
+:root {
+}
+
+html {
+}
+
+a {
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+.wrapper {
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: flex-start;
+  padding: 0;
+  min-width: 312px;
+  max-width: max-content;
+}

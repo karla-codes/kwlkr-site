@@ -4,9 +4,36 @@ const { section, title } = Astro.props;
 
 <section
   id={section}
-  class='wrapper'>
+  class='wrapper flow'>
   <h2>{title}</h2>
   <div class='content'>
     <slot />
   </div>
 </section>
+<div class='divider'></div>
+
+<style>
+  section {
+    container-type: inline-size;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 2vw + 1rem, 2.5rem);
+  }
+
+  @container (min-width: 900px) {
+    .content {
+      width: min(60%, var(--section-max-width));
+      padding-left: 10vw;
+      margin-top: 0;
+    }
+
+    h2 {
+      width: min(100%, 260px);
+    }
+  }
+</style>

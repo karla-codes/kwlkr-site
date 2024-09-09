@@ -1,16 +1,27 @@
 ---
-import SectionWrapper from "./SectionWrapper.astro";
+import SectionWrapper from './SectionWrapper.astro';
 
 const { section, title } = Astro.props;
 ---
 
-<SectionWrapper {section} {title}>
+<SectionWrapper
+  {section}
+  {title}>
   <p>
-    I'm a front-end developer who loves making delightful experiences for the
-    web.
+    I'm Karla, a front-end developer who loves making delightful experiences for
+    the web.
   </p>
-  <div>
+  <!-- <div>
     Put cool things here. Like last Spotify song played. Or current read/video
     game.
-  </div>
+  </div> -->
 </SectionWrapper>
+<!-- <div class='divider-thin'></div> -->
+
+<style>
+  p {
+    font-family: 'Karla Variable', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.875rem, 1.5vw + 1rem, 2.5rem);
+  }
+</style>

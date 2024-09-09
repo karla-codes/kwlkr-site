@@ -4,10 +4,16 @@ const { section, owner } = Astro.props;
 
 <footer
   id={section}
-  class='wrapper'>
+  class='wrapper flow'>
   <p>
     Site was designed and developed by {owner} using Figma, Astro, and Netlify to
     host. Font used is Karla.
   </p>
   <p>© 2024 {owner}</p>
 </footer>
+
+<style>
+  footer {
+    flex-direction: column;
+  }
+</style>

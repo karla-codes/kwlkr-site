@@ -1,10 +1,12 @@
 ---
-import SectionWrapper from "./SectionWrapper.astro";
+import SectionWrapper from './SectionWrapper.astro';
 const { section, title } = Astro.props;
 ---
 
-<SectionWrapper {section} {title}>
-  <ul>
+<SectionWrapper
+  {section}
+  {title}>
+  <ul role='list'>
     <li><a href=''>keiwalker@icloud.com</a></li>
     <li><a href=''>LinkedIn</a></li>
     <li><a href=''>GitHub</a></li>

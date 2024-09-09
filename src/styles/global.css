@@ -1,30 +1,70 @@
 /* Set variables for color theme */
 :root {
+  --flow-space: 1.5em;
+  --section-max-width: 75ch;
+  --main-max-width: 75em;
 }
 
-html {
+/* borrowed from Andy Bell: https://piccalil.li/blog/my-favourite-3-lines-of-css/ */
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.divider {
+  height: 1px;
+  background-color: black;
+  width: min(100%, var(--main-max-width));
+  margin-inline: auto;
+  margin-bottom: 70px;
+
+  &:not(#nav-divider) {
+    margin-top: 100px;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
+  font-family: 'Sometype Mono Variable', 'Courier New', Courier, monospace;
+  /* font-size: 16px; */
+}
+
+:is(h1, h2, h3) {
+  font-family: 'Karla Variable';
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-weight: 800;
 }
 
 a {
-  text-transform: lowercase;
   text-decoration: none;
+}
+
+a:not(:is(h1, h2, h3) > a) {
+  text-transform: lowercase;
+}
+
+li {
+  text-decoration: underline 1px solid;
+  text-underline-offset: 2px;
 }
 
 .wrapper {
   /* background-color: pink; */
   display: flex;
-  flex-direction: column;
-  width: 90%;
-  margin: 0 auto;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  width: min(100%, var(--main-max-width));
+  /* justify-content: space-between; */
+  align-items: flex-start;
+  margin-inline: auto;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-self: flex-start;
-  padding: 0;
-  min-width: 312px;
-  max-width: max-content;
+/* Project Section Styles */
+
+.project-card {
+  --flow-space: 1em;
 }

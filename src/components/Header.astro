@@ -2,16 +2,100 @@
 const { name } = Astro.props;
 ---
 
-<header class='wrapper'>
-  <div class='header-section'>
-    <h1>{name}</h1>
+<header>
+  <div class='header-container wrapper'>
+    <div class='current-stats'>
+      <p>Cool info will show up here!</p>
+    </div>
+    <div class='header-links'>
+      <a
+        href='/'
+        class='home-link'
+        >{name}</a
+      >
+      <nav>
+        <ul role='list'>
+          <li><a href='#projects'>Projects</a></li>
+          <li><a href='#about'>About</a></li>
+          <li><a href='#contact'>Get in Touch</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
-<nav class='wrapper'>
-  <ul>
-    <li><a href='#projects'>Projects</a></li>
-    <li><a href='#about'>About</a></li>
-    <li><a href='#contact'>Get in Touch</a></li>
-  </ul>
-</nav>
-<div class='divider-thin'></div>
+<div
+  class='divider'
+  id='nav-divider'>
+</div>
+
+<style>
+  header {
+    container-type: inline-size;
+  }
+
+  .current-stats {
+    border: 2px solid black;
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+    width: 100%;
+    padding: 0;
+    margin-block-end: 3em;
+  }
+
+  .current-stats p {
+    margin: 2px;
+  }
+
+  .header-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+
+    & a {
+      padding-right: 1rem;
+    }
+  }
+
+  .home-link {
+    color: inherit;
+    font-family: 'Karla Variable', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 800;
+    text-transform: capitalize;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    max-width: max-content;
+  }
+
+  nav ul li:not(:last-child) {
+    padding-right: 2ch;
+  }
+
+  #nav-divider {
+    height: 4px;
+  }
+
+  @container (min-width: 900px) {
+    .header-container,
+    .header-links {
+      flex-wrap: nowrap;
+    }
+
+    .header-container {
+      flex-direction: row-reverse;
+    }
+
+    .current-stats {
+      width: 60vw;
+      margin-block-end: auto;
+    }
+  }
+</style>
